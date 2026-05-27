@@ -1,0 +1,427 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "🛍️ ShopApp" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e5]:
+        - link "상품 목록" [ref=e6] [cursor=pointer]:
+          - /url: /products
+        - link "장바구니" [ref=e7] [cursor=pointer]:
+          - /url: /cart
+        - link "관리자" [ref=e8] [cursor=pointer]:
+          - /url: /admin
+      - generic [ref=e9]:
+        - generic [ref=e10]: 관리자 님
+        - link "마이페이지" [ref=e11] [cursor=pointer]:
+          - /url: /mypage
+        - button "로그아웃" [ref=e12]
+  - main [ref=e13]:
+    - generic [ref=e14]:
+      - heading "관리자 대시보드" [level=1] [ref=e15]
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - heading "상품 목록" [level=2] [ref=e18]
+          - button "상품 등록" [ref=e19]:
+            - img
+            - text: 상품 등록
+        - table [ref=e21]:
+          - rowgroup [ref=e22]:
+            - row "상품명 카테고리 가격 재고 관리" [ref=e23]:
+              - columnheader "상품명" [ref=e24]
+              - columnheader "카테고리" [ref=e25]
+              - columnheader "가격" [ref=e26]
+              - columnheader "재고" [ref=e27]
+              - columnheader "관리" [ref=e28]
+          - rowgroup [ref=e29]:
+            - row "플리스 집업 상의 65,000원 55 수정 삭제" [ref=e30]:
+              - cell "플리스 집업" [ref=e31]
+              - cell "상의" [ref=e32]
+              - cell "65,000원" [ref=e33]
+              - cell "55" [ref=e34]
+              - cell "수정 삭제" [ref=e35]:
+                - generic [ref=e36]:
+                  - button "수정" [ref=e37]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e38]:
+                    - img
+                    - text: 삭제
+            - row "실버 체인 목걸이 액세서리 35,000원 120 수정 삭제" [ref=e39]:
+              - cell "실버 체인 목걸이" [ref=e40]
+              - cell "액세서리" [ref=e41]
+              - cell "35,000원" [ref=e42]
+              - cell "120" [ref=e43]
+              - cell "수정 삭제" [ref=e44]:
+                - generic [ref=e45]:
+                  - button "수정" [ref=e46]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e47]:
+                    - img
+                    - text: 삭제
+            - row "버킷햇 모자 25,000원 90 수정 삭제" [ref=e48]:
+              - cell "버킷햇" [ref=e49]
+              - cell "모자" [ref=e50]
+              - cell "25,000원" [ref=e51]
+              - cell "90" [ref=e52]
+              - cell "수정 삭제" [ref=e53]:
+                - generic [ref=e54]:
+                  - button "수정" [ref=e55]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e56]:
+                    - img
+                    - text: 삭제
+            - row "울 가디건 상의 79,000원 45 수정 삭제" [ref=e57]:
+              - cell "울 가디건" [ref=e58]
+              - cell "상의" [ref=e59]
+              - cell "79,000원" [ref=e60]
+              - cell "45" [ref=e61]
+              - cell "수정 삭제" [ref=e62]:
+                - generic [ref=e63]:
+                  - button "수정" [ref=e64]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e65]:
+                    - img
+                    - text: 삭제
+            - row "린넨 와이드 팬츠 하의 55,000원 70 수정 삭제" [ref=e66]:
+              - cell "린넨 와이드 팬츠" [ref=e67]
+              - cell "하의" [ref=e68]
+              - cell "55,000원" [ref=e69]
+              - cell "70" [ref=e70]
+              - cell "수정 삭제" [ref=e71]:
+                - generic [ref=e72]:
+                  - button "수정" [ref=e73]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e74]:
+                    - img
+                    - text: 삭제
+            - row "클래식 화이트 티셔츠 상의 29,000원 100 수정 삭제" [ref=e75]:
+              - cell "클래식 화이트 티셔츠" [ref=e76]
+              - cell "상의" [ref=e77]
+              - cell "29,000원" [ref=e78]
+              - cell "100" [ref=e79]
+              - cell "수정 삭제" [ref=e80]:
+                - generic [ref=e81]:
+                  - button "수정" [ref=e82]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e83]:
+                    - img
+                    - text: 삭제
+            - row "캔버스 스니커즈 신발 69,000원 50 수정 삭제" [ref=e84]:
+              - cell "캔버스 스니커즈" [ref=e85]
+              - cell "신발" [ref=e86]
+              - cell "69,000원" [ref=e87]
+              - cell "50" [ref=e88]
+              - cell "수정 삭제" [ref=e89]:
+                - generic [ref=e90]:
+                  - button "수정" [ref=e91]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e92]:
+                    - img
+                    - text: 삭제
+            - row "레더 미니백 가방 89,000원 40 수정 삭제" [ref=e93]:
+              - cell "레더 미니백" [ref=e94]
+              - cell "가방" [ref=e95]
+              - cell "89,000원" [ref=e96]
+              - cell "40" [ref=e97]
+              - cell "수정 삭제" [ref=e98]:
+                - generic [ref=e99]:
+                  - button "수정" [ref=e100]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e101]:
+                    - img
+                    - text: 삭제
+            - row "오버핏 후드티 상의 49,000원 60 수정 삭제" [ref=e102]:
+              - cell "오버핏 후드티" [ref=e103]
+              - cell "상의" [ref=e104]
+              - cell "49,000원" [ref=e105]
+              - cell "60" [ref=e106]
+              - cell "수정 삭제" [ref=e107]:
+                - generic [ref=e108]:
+                  - button "수정" [ref=e109]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e110]:
+                    - img
+                    - text: 삭제
+            - row "슬림핏 청바지 하의 59,000원 80 수정 삭제" [ref=e111]:
+              - cell "슬림핏 청바지" [ref=e112]
+              - cell "하의" [ref=e113]
+              - cell "59,000원" [ref=e114]
+              - cell "80" [ref=e115]
+              - cell "수정 삭제" [ref=e116]:
+                - generic [ref=e117]:
+                  - button "수정" [ref=e118]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e119]:
+                    - img
+                    - text: 삭제
+            - row "린넨 와이드 팬츠 하의 55,000원 70 수정 삭제" [ref=e120]:
+              - cell "린넨 와이드 팬츠" [ref=e121]
+              - cell "하의" [ref=e122]
+              - cell "55,000원" [ref=e123]
+              - cell "70" [ref=e124]
+              - cell "수정 삭제" [ref=e125]:
+                - generic [ref=e126]:
+                  - button "수정" [ref=e127]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e128]:
+                    - img
+                    - text: 삭제
+            - row "클래식 화이트 티셔츠 상의 29,000원 100 수정 삭제" [ref=e129]:
+              - cell "클래식 화이트 티셔츠" [ref=e130]
+              - cell "상의" [ref=e131]
+              - cell "29,000원" [ref=e132]
+              - cell "100" [ref=e133]
+              - cell "수정 삭제" [ref=e134]:
+                - generic [ref=e135]:
+                  - button "수정" [ref=e136]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e137]:
+                    - img
+                    - text: 삭제
+            - row "슬림핏 청바지 하의 59,000원 80 수정 삭제" [ref=e138]:
+              - cell "슬림핏 청바지" [ref=e139]
+              - cell "하의" [ref=e140]
+              - cell "59,000원" [ref=e141]
+              - cell "80" [ref=e142]
+              - cell "수정 삭제" [ref=e143]:
+                - generic [ref=e144]:
+                  - button "수정" [ref=e145]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e146]:
+                    - img
+                    - text: 삭제
+            - row "오버핏 후드티 상의 49,000원 60 수정 삭제" [ref=e147]:
+              - cell "오버핏 후드티" [ref=e148]
+              - cell "상의" [ref=e149]
+              - cell "49,000원" [ref=e150]
+              - cell "60" [ref=e151]
+              - cell "수정 삭제" [ref=e152]:
+                - generic [ref=e153]:
+                  - button "수정" [ref=e154]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e155]:
+                    - img
+                    - text: 삭제
+            - row "레더 미니백 가방 89,000원 40 수정 삭제" [ref=e156]:
+              - cell "레더 미니백" [ref=e157]
+              - cell "가방" [ref=e158]
+              - cell "89,000원" [ref=e159]
+              - cell "40" [ref=e160]
+              - cell "수정 삭제" [ref=e161]:
+                - generic [ref=e162]:
+                  - button "수정" [ref=e163]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e164]:
+                    - img
+                    - text: 삭제
+            - row "캔버스 스니커즈 신발 69,000원 50 수정 삭제" [ref=e165]:
+              - cell "캔버스 스니커즈" [ref=e166]
+              - cell "신발" [ref=e167]
+              - cell "69,000원" [ref=e168]
+              - cell "50" [ref=e169]
+              - cell "수정 삭제" [ref=e170]:
+                - generic [ref=e171]:
+                  - button "수정" [ref=e172]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e173]:
+                    - img
+                    - text: 삭제
+            - row "울 가디건 상의 79,000원 45 수정 삭제" [ref=e174]:
+              - cell "울 가디건" [ref=e175]
+              - cell "상의" [ref=e176]
+              - cell "79,000원" [ref=e177]
+              - cell "45" [ref=e178]
+              - cell "수정 삭제" [ref=e179]:
+                - generic [ref=e180]:
+                  - button "수정" [ref=e181]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e182]:
+                    - img
+                    - text: 삭제
+            - row "버킷햇 모자 25,000원 90 수정 삭제" [ref=e183]:
+              - cell "버킷햇" [ref=e184]
+              - cell "모자" [ref=e185]
+              - cell "25,000원" [ref=e186]
+              - cell "90" [ref=e187]
+              - cell "수정 삭제" [ref=e188]:
+                - generic [ref=e189]:
+                  - button "수정" [ref=e190]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e191]:
+                    - img
+                    - text: 삭제
+            - row "실버 체인 목걸이 액세서리 35,000원 120 수정 삭제" [ref=e192]:
+              - cell "실버 체인 목걸이" [ref=e193]
+              - cell "액세서리" [ref=e194]
+              - cell "35,000원" [ref=e195]
+              - cell "120" [ref=e196]
+              - cell "수정 삭제" [ref=e197]:
+                - generic [ref=e198]:
+                  - button "수정" [ref=e199]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e200]:
+                    - img
+                    - text: 삭제
+            - row "플리스 집업 상의 65,000원 55 수정 삭제" [ref=e201]:
+              - cell "플리스 집업" [ref=e202]
+              - cell "상의" [ref=e203]
+              - cell "65,000원" [ref=e204]
+              - cell "55" [ref=e205]
+              - cell "수정 삭제" [ref=e206]:
+                - generic [ref=e207]:
+                  - button "수정" [ref=e208]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e209]:
+                    - img
+                    - text: 삭제
+            - row "클래식 화이트 티셔츠 상의 29,000원 100 수정 삭제" [ref=e210]:
+              - cell "클래식 화이트 티셔츠" [ref=e211]
+              - cell "상의" [ref=e212]
+              - cell "29,000원" [ref=e213]
+              - cell "100" [ref=e214]
+              - cell "수정 삭제" [ref=e215]:
+                - generic [ref=e216]:
+                  - button "수정" [ref=e217]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e218]:
+                    - img
+                    - text: 삭제
+            - row "플리스 집업 상의 65,000원 55 수정 삭제" [ref=e219]:
+              - cell "플리스 집업" [ref=e220]
+              - cell "상의" [ref=e221]
+              - cell "65,000원" [ref=e222]
+              - cell "55" [ref=e223]
+              - cell "수정 삭제" [ref=e224]:
+                - generic [ref=e225]:
+                  - button "수정" [ref=e226]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e227]:
+                    - img
+                    - text: 삭제
+            - row "실버 체인 목걸이 액세서리 35,000원 120 수정 삭제" [ref=e228]:
+              - cell "실버 체인 목걸이" [ref=e229]
+              - cell "액세서리" [ref=e230]
+              - cell "35,000원" [ref=e231]
+              - cell "120" [ref=e232]
+              - cell "수정 삭제" [ref=e233]:
+                - generic [ref=e234]:
+                  - button "수정" [ref=e235]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e236]:
+                    - img
+                    - text: 삭제
+            - row "버킷햇 모자 25,000원 90 수정 삭제" [ref=e237]:
+              - cell "버킷햇" [ref=e238]
+              - cell "모자" [ref=e239]
+              - cell "25,000원" [ref=e240]
+              - cell "90" [ref=e241]
+              - cell "수정 삭제" [ref=e242]:
+                - generic [ref=e243]:
+                  - button "수정" [ref=e244]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e245]:
+                    - img
+                    - text: 삭제
+            - row "울 가디건 상의 79,000원 45 수정 삭제" [ref=e246]:
+              - cell "울 가디건" [ref=e247]
+              - cell "상의" [ref=e248]
+              - cell "79,000원" [ref=e249]
+              - cell "45" [ref=e250]
+              - cell "수정 삭제" [ref=e251]:
+                - generic [ref=e252]:
+                  - button "수정" [ref=e253]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e254]:
+                    - img
+                    - text: 삭제
+            - row "린넨 와이드 팬츠 하의 55,000원 70 수정 삭제" [ref=e255]:
+              - cell "린넨 와이드 팬츠" [ref=e256]
+              - cell "하의" [ref=e257]
+              - cell "55,000원" [ref=e258]
+              - cell "70" [ref=e259]
+              - cell "수정 삭제" [ref=e260]:
+                - generic [ref=e261]:
+                  - button "수정" [ref=e262]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e263]:
+                    - img
+                    - text: 삭제
+            - row "캔버스 스니커즈 신발 69,000원 50 수정 삭제" [ref=e264]:
+              - cell "캔버스 스니커즈" [ref=e265]
+              - cell "신발" [ref=e266]
+              - cell "69,000원" [ref=e267]
+              - cell "50" [ref=e268]
+              - cell "수정 삭제" [ref=e269]:
+                - generic [ref=e270]:
+                  - button "수정" [ref=e271]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e272]:
+                    - img
+                    - text: 삭제
+            - row "레더 미니백 가방 89,000원 40 수정 삭제" [ref=e273]:
+              - cell "레더 미니백" [ref=e274]
+              - cell "가방" [ref=e275]
+              - cell "89,000원" [ref=e276]
+              - cell "40" [ref=e277]
+              - cell "수정 삭제" [ref=e278]:
+                - generic [ref=e279]:
+                  - button "수정" [ref=e280]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e281]:
+                    - img
+                    - text: 삭제
+            - row "오버핏 후드티 상의 49,000원 60 수정 삭제" [ref=e282]:
+              - cell "오버핏 후드티" [ref=e283]
+              - cell "상의" [ref=e284]
+              - cell "49,000원" [ref=e285]
+              - cell "60" [ref=e286]
+              - cell "수정 삭제" [ref=e287]:
+                - generic [ref=e288]:
+                  - button "수정" [ref=e289]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e290]:
+                    - img
+                    - text: 삭제
+            - row "슬림핏 청바지 하의 59,000원 80 수정 삭제" [ref=e291]:
+              - cell "슬림핏 청바지" [ref=e292]
+              - cell "하의" [ref=e293]
+              - cell "59,000원" [ref=e294]
+              - cell "80" [ref=e295]
+              - cell "수정 삭제" [ref=e296]:
+                - generic [ref=e297]:
+                  - button "수정" [ref=e298]:
+                    - img
+                    - text: 수정
+                  - button "삭제" [ref=e299]:
+                    - img
+                    - text: 삭제
+  - button "Open Next.js Dev Tools" [ref=e305] [cursor=pointer]:
+    - img [ref=e306]

@@ -1,0 +1,465 @@
+- generic:
+  - banner:
+    - generic:
+      - link:
+        - /url: /
+        - text: 🛍️ ShopApp
+      - navigation:
+        - link:
+          - /url: /products
+          - text: 상품 목록
+        - link:
+          - /url: /cart
+          - text: 장바구니
+        - link:
+          - /url: /admin
+          - text: 관리자
+      - generic:
+        - generic: 관리자 님
+        - link:
+          - /url: /mypage
+          - text: 마이페이지
+        - button: 로그아웃
+  - main:
+    - generic:
+      - heading [level=1]: 관리자 대시보드
+      - generic:
+        - generic:
+          - heading [level=2]: 상품 목록
+          - button:
+            - img
+            - text: 상품 등록
+        - generic:
+          - table:
+            - rowgroup:
+              - row:
+                - columnheader: 상품명
+                - columnheader: 카테고리
+                - columnheader: 가격
+                - columnheader: 재고
+                - columnheader: 관리
+            - rowgroup:
+              - row:
+                - cell: 플리스 집업
+                - cell: 상의
+                - cell: 65,000원
+                - cell: "55"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 실버 체인 목걸이
+                - cell: 액세서리
+                - cell: 35,000원
+                - cell: "120"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 버킷햇
+                - cell: 모자
+                - cell: 25,000원
+                - cell: "90"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 울 가디건
+                - cell: 상의
+                - cell: 79,000원
+                - cell: "45"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 린넨 와이드 팬츠
+                - cell: 하의
+                - cell: 55,000원
+                - cell: "70"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 클래식 화이트 티셔츠
+                - cell: 상의
+                - cell: 29,000원
+                - cell: "100"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 캔버스 스니커즈
+                - cell: 신발
+                - cell: 69,000원
+                - cell: "50"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 레더 미니백
+                - cell: 가방
+                - cell: 89,000원
+                - cell: "40"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 오버핏 후드티
+                - cell: 상의
+                - cell: 49,000원
+                - cell: "60"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 슬림핏 청바지
+                - cell: 하의
+                - cell: 59,000원
+                - cell: "80"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 린넨 와이드 팬츠
+                - cell: 하의
+                - cell: 55,000원
+                - cell: "70"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 클래식 화이트 티셔츠
+                - cell: 상의
+                - cell: 29,000원
+                - cell: "100"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 슬림핏 청바지
+                - cell: 하의
+                - cell: 59,000원
+                - cell: "80"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 오버핏 후드티
+                - cell: 상의
+                - cell: 49,000원
+                - cell: "60"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 레더 미니백
+                - cell: 가방
+                - cell: 89,000원
+                - cell: "40"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 캔버스 스니커즈
+                - cell: 신발
+                - cell: 69,000원
+                - cell: "50"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 울 가디건
+                - cell: 상의
+                - cell: 79,000원
+                - cell: "45"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 버킷햇
+                - cell: 모자
+                - cell: 25,000원
+                - cell: "90"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 실버 체인 목걸이
+                - cell: 액세서리
+                - cell: 35,000원
+                - cell: "120"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 플리스 집업
+                - cell: 상의
+                - cell: 65,000원
+                - cell: "55"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 클래식 화이트 티셔츠
+                - cell: 상의
+                - cell: 29,000원
+                - cell: "100"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 플리스 집업
+                - cell: 상의
+                - cell: 65,000원
+                - cell: "55"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 실버 체인 목걸이
+                - cell: 액세서리
+                - cell: 35,000원
+                - cell: "120"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 버킷햇
+                - cell: 모자
+                - cell: 25,000원
+                - cell: "90"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 울 가디건
+                - cell: 상의
+                - cell: 79,000원
+                - cell: "45"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 린넨 와이드 팬츠
+                - cell: 하의
+                - cell: 55,000원
+                - cell: "70"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 캔버스 스니커즈
+                - cell: 신발
+                - cell: 69,000원
+                - cell: "50"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 레더 미니백
+                - cell: 가방
+                - cell: 89,000원
+                - cell: "40"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 오버핏 후드티
+                - cell: 상의
+                - cell: 49,000원
+                - cell: "60"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+              - row:
+                - cell: 슬림핏 청바지
+                - cell: 하의
+                - cell: 59,000원
+                - cell: "80"
+                - cell:
+                  - generic:
+                    - button:
+                      - img
+                      - text: 수정
+                    - button:
+                      - img
+                      - text: 삭제
+  - generic:
+    - generic:
+      - img
+    - button:
+      - img
+  - button "Open Next.js Dev Tools" [ref=e305] [cursor=pointer]:
+    - img [ref=e306]
+  - alert
+  - dialog "상품 수정" [ref=e310]:
+    - heading "상품 수정" [level=2] [ref=e312]
+    - generic [ref=e313]:
+      - generic [ref=e314]:
+        - generic [ref=e315]: 상품명 *
+        - textbox "예) 베이직 맨투맨" [active] [ref=e316]: 플리스 집업
+      - generic [ref=e317]:
+        - generic [ref=e318]: 설명
+        - textbox "상품 설명 (선택)" [ref=e319]: 따뜻하고 가벼운 플리스 소재 집업
+      - generic [ref=e320]:
+        - generic [ref=e321]:
+          - generic [ref=e322]: 가격 (원) *
+          - spinbutton [ref=e323]: "65000"
+        - generic [ref=e324]:
+          - generic [ref=e325]: 재고 *
+          - spinbutton [ref=e326]: "55"
+      - generic [ref=e327]:
+        - generic [ref=e328]: 카테고리
+        - textbox "예) 상의, 하의, 아우터" [ref=e329]: 상의
+      - generic [ref=e330]:
+        - generic [ref=e331]: 이미지 URL
+        - textbox "https://example.com/image.jpg" [ref=e332]: /images/products/product10.jpg
+      - button "저장하기" [ref=e334]
+    - button "Close" [ref=e335]:
+      - img
+      - generic [ref=e336]: Close

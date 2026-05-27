@@ -1,0 +1,30 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "🛍️ ShopApp" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e5]:
+        - link "상품 목록" [ref=e6] [cursor=pointer]:
+          - /url: /products
+        - link "장바구니" [ref=e7] [cursor=pointer]:
+          - /url: /cart
+        - link "관리자" [ref=e131] [cursor=pointer]:
+          - /url: /admin
+      - generic [ref=e8]:
+        - generic [ref=e132]: 관리자 님
+        - link "마이페이지" [ref=e133] [cursor=pointer]:
+          - /url: /mypage
+        - button "로그아웃" [ref=e134]
+  - main [ref=e11]:
+    - generic [ref=e135]:
+      - heading "🛍️ ShopApp" [level=1] [ref=e136]
+      - paragraph [ref=e137]: 다양한 상품을 만나보세요
+      - link "쇼핑 시작하기" [ref=e138] [cursor=pointer]:
+        - /url: /products
+  - generic [ref=e32]:
+    - img [ref=e34]
+    - button "Open Tanstack query devtools" [ref=e82] [cursor=pointer]:
+      - img [ref=e83]
+  - button "Open Next.js Dev Tools" [ref=e27] [cursor=pointer]:
+    - img [ref=e28]
+  - alert [ref=e31]
