@@ -6,9 +6,10 @@ export function SignOutButton() {
   return (
     <button
       onClick={() => signOut({ callbackUrl: "/" })}
-      className="text-sm text-red-500 hover:text-red-700"
+      className=" text-red-500 hover:text-red-700
+                text-xs tracking-widest uppercase transition-colors"
     >
-      로그아웃
+      Logout
     </button>
   );
 }

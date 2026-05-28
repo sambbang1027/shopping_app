@@ -10,31 +10,33 @@ export default function CartPage() {
 
   if (items.length === 0) {
     return (
-      <div className="text-center py-20">
-        <p className="text-5xl mb-4">🛒</p>
-        <p className="text-lg text-gray-500 mb-6">장바구니가 비어 있습니다</p>
+      <div className="text-center py-32">
+        <p className="text-[11px] tracking-[0.4em] uppercase text-gray-300 mb-8">
+          Your cart is empty
+        </p>
         <Link
           href="/products"
-          className="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors"
+          className="text-[10px] tracking-[0.3em] uppercase text-gray-500 hover:text-gray-900 transition-colors border-b border-gray-300 pb-px"
         >
-          쇼핑 계속하기
+          Continue Shopping
         </Link>
       </div>
     );
   }
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-8">장바구니</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* 장바구니 아이템 목록 */}
+    <div className="max-w-5xl mx-auto">
+      <h1 className="text-[11px] tracking-[0.4em] uppercase text-gray-400 mb-12">Cart</h1>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        {/* 아이템 목록 */}
         <div className="lg:col-span-2">
           {items.map((item) => (
             <CartItem key={item.id} item={item} />
           ))}
         </div>
 
-        {/* 결제 요약 */}
+        {/* 요약 */}
         <div className="lg:col-span-1">
           <CartSummary />
         </div>
