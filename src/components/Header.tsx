@@ -24,13 +24,6 @@ export async function Header() {
 
         {/* 네비게이션 */}
         <nav className="flex items-center gap-8">
-          <Link
-            href="/products"
-            className="text-xs tracking-widest uppercase text-gray-500 hover:text-gray-900 transition-colors"
-          >
-            Products
-          </Link>
-          <CartBadge userId={session?.user?.id} />
           {session?.user?.role === "admin" && (
             <Link
               href="/admin"
@@ -43,6 +36,7 @@ export async function Header() {
 
         {/* 인증 영역 */}
         <div className="flex items-center gap-4">
+          <CartBadge userId={session?.user?.id} />
           {session ? (
             <>
               <Link
@@ -54,20 +48,12 @@ export async function Header() {
               <SignOutButton />
             </>
           ) : (
-            <>
-              <Link
-                href="/login"
-                className="text-xs tracking-widest uppercase text-gray-500 hover:text-gray-900 transition-colors"
-              >
-                Login
-              </Link>
-              <Link
-                href="/register"
-                className="text-xs tracking-widest uppercase border border-gray-900 text-gray-900 px-4 py-2 hover:bg-gray-900 hover:text-white transition-colors"
-              >
-                Sign Up
-              </Link>
-            </>
+            <Link
+              href="/login"
+              className="text-xs tracking-widest uppercase text-gray-500 hover:text-gray-900 transition-colors"
+            >
+              Login
+            </Link>
           )}
         </div>
       </div>
