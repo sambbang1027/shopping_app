@@ -38,28 +38,30 @@ export default async function ProductsPage({
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6">상품 목록</h1>
+      <h1 className="text-[11px] tracking-[0.4em] uppercase text-gray-400 mb-10">
+        Products
+      </h1>
 
       {/* 카테고리 필터 */}
-      <div className="flex gap-2 mb-8 flex-wrap">
+      <div className="flex items-center gap-8 mb-12 border-b border-gray-100">
         <a
           href="/products"
-          className={`px-4 py-2 rounded-full text-sm border transition-colors ${
+          className={`pb-3 text-[11px] tracking-[0.25em] uppercase transition-colors border-b -mb-px ${
             !category
-              ? "bg-gray-900 text-white border-gray-900"
-              : "bg-white text-gray-600 border-gray-300 hover:border-gray-500"
+              ? "border-gray-900 text-gray-900"
+              : "border-transparent text-gray-400 hover:text-gray-900"
           }`}
         >
-          전체
+          All
         </a>
         {categoryList.map((cat) => (
           <a
             key={cat}
             href={`/products?category=${encodeURIComponent(cat)}`}
-            className={`px-4 py-2 rounded-full text-sm border transition-colors ${
+            className={`pb-3 text-[11px] tracking-[0.25em] uppercase transition-colors border-b -mb-px ${
               category === cat
-                ? "bg-gray-900 text-white border-gray-900"
-                : "bg-white text-gray-600 border-gray-300 hover:border-gray-500"
+                ? "border-gray-900 text-gray-900"
+                : "border-transparent text-gray-400 hover:text-gray-900"
             }`}
           >
             {cat}

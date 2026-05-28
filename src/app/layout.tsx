@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
-import { QueryProvider } from "@/providers/QueryProvider"; // ← 추가
+import { QueryProvider } from "@/providers/QueryProvider";
+import { SessionProvider } from "@/providers/SessionProvider";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
@@ -23,13 +24,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <QueryProvider>
-          {" "}
-          {/* ← 추가 */}
-          <Header />
-          <main className="max-w-6xl mx-auto px-4 py-8">{children}</main>
-        </QueryProvider>{" "}
-        {/* ← 추가 */}
+        <SessionProvider>
+          <QueryProvider>
+            <Header />
+            <main className="max-w-6xl mx-auto px-4 py-8">{children}</main>
+          </QueryProvider>
+        </SessionProvider>
       </body>
     </html>
   );

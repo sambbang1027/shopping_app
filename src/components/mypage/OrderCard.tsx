@@ -1,21 +1,17 @@
 import Image from "next/image";
 
-// 배송 상태별 색상 정의
-const STATUS_STYLE: Record<string, string> = {
-  PENDING: "bg-yellow-100 text-yellow-700",
-  PAID: "bg-blue-100   text-blue-700",
-  SHIPPING: "bg-purple-100 text-purple-700",
-  DONE: "bg-green-100  text-green-700",
+const STATUS_COLOR: Record<string, string> = {
+  PENDING: "text-gray-400",
+  PAID: "text-blue-500",
+  SHIPPING: "text-purple-500",
+  DONE: "text-green-600",
 };
 
 interface OrderItem {
   id: string;
   quantity: number;
   price: number;
-  product: {
-    name: string;
-    imageUrl: string | null;
-  } | null;
+  product: { name: string; imageUrl: string | null } | null;
 }
 
 interface Order {
@@ -26,13 +22,8 @@ interface Order {
   orderItems: OrderItem[];
 }
 
-interface OrderCardProps {
-  order: Order;
-}
-
-export function OrderCard({ order }: OrderCardProps) {
-  const statusStyle =
-    STATUS_STYLE[order.status.code] ?? "bg-gray-100 text-gray-700";
+export function OrderCard({ order }: { order: Order }) {
+  const statusColor = STATUS_COLOR[order.status.code] ?? "text-gray-400";
   const orderDate = new Date(order.createdAt).toLocaleDateString("ko-KR", {
     year: "numeric",
     month: "long",
@@ -40,59 +31,63 @@ export function OrderCard({ order }: OrderCardProps) {
   });
 
   return (
-    <div className="border border-gray-200 rounded-xl p-5 space-y-4">
+    <div className="border-t border-gray-100 pt-6 pb-8 space-y-5">
       {/* 주문 헤더 */}
-      <div className="flex items-center justify-between">
-        <div>
-          <p className="text-xs text-gray-400">{orderDate}</p>
-          <p className="text-xs text-gray-400 font-mono mt-0.5">
-            주문번호: {order.id.slice(0, 8)}...
+      <div className="flex items-baseline justify-between">
+        <div className="space-y-0.5">
+          <p className="text-[10px] tracking-[0.2em] uppercase text-gray-400">
+            {orderDate}
+          </p>
+          <p className="text-[10px] text-gray-300 font-mono">
+            #{order.id.slice(0, 8).toUpperCase()}
           </p>
         </div>
-        <span
-          className={`text-xs font-semibold px-3 py-1 rounded-full ${statusStyle}`}
-        >
+        <span className={`text-[10px] tracking-[0.25em] uppercase font-medium ${statusColor}`}>
           {order.status.label}
         </span>
       </div>
 
       {/* 주문 상품 목록 */}
-      <div className="space-y-3">
+      <div className="space-y-4">
         {order.orderItems.map((item) => (
-          <div key={item.id} className="flex gap-3 items-center">
-            <div className="relative w-14 h-14 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100">
+          <div key={item.id} className="flex gap-4">
+            <div
+              className="relative w-14 flex-shrink-0 bg-gray-50 overflow-hidden"
+              style={{ aspectRatio: "3/4" }}
+            >
               {item.product?.imageUrl ? (
                 <Image
                   src={item.product.imageUrl}
                   alt={item.product.name}
                   fill
                   className="object-cover"
+                  sizes="56px"
                 />
               ) : (
-                <div className="flex items-center justify-center h-full text-xs text-gray-400">
-                  없음
+                <div className="flex items-center justify-center h-full text-gray-300 text-[9px]">
+                  —
                 </div>
               )}
             </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-gray-900 truncate">
-                {item.product?.name ?? "삭제된 상품"}
-              </p>
-              <p className="text-xs text-gray-500">
-                {item.price.toLocaleString("ko-KR")}원 × {item.quantity}개
+            <div className="flex flex-1 justify-between items-start pt-0.5">
+              <div>
+                <p className="text-xs text-gray-900 leading-snug">
+                  {item.product?.name ?? "삭제된 상품"}
+                </p>
+                <p className="text-[10px] text-gray-400 mt-1">Qty {item.quantity}</p>
+              </div>
+              <p className="text-xs text-gray-900 tabular-nums">
+                {(item.price * item.quantity).toLocaleString("ko-KR")}원
               </p>
             </div>
-            <p className="text-sm font-bold text-gray-900 flex-shrink-0">
-              {(item.price * item.quantity).toLocaleString("ko-KR")}원
-            </p>
           </div>
         ))}
       </div>
 
-      {/* 총 결제금액 */}
-      <div className="border-t border-gray-100 pt-3 flex justify-between items-center">
-        <span className="text-sm text-gray-500">총 결제금액</span>
-        <span className="font-bold text-gray-900">
+      {/* 총 금액 */}
+      <div className="flex justify-between items-baseline pt-2 border-t border-gray-100">
+        <span className="text-[10px] tracking-[0.3em] uppercase text-gray-400">Total</span>
+        <span className="text-sm font-medium text-gray-900 tabular-nums">
           {order.totalPrice.toLocaleString("ko-KR")}원
         </span>
       </div>

@@ -1,53 +1,61 @@
 "use client";
 
-import Link from "next/link";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { useCartStore } from "@/store/cartStore";
 
 export function CartSummary() {
   const totalPrice = useCartStore((state) => state.totalPrice());
   const items = useCartStore((state) => state.items);
+  const { data: session } = useSession();
+  const router = useRouter();
 
   if (items.length === 0) return null;
 
+  const handleCheckout = () => {
+    if (!session) {
+      router.push("/login?callbackUrl=/checkout");
+      return;
+    }
+    router.push("/checkout");
+  };
+
   return (
-    <div className="bg-gray-50 rounded-xl p-6 sticky top-24">
-      <h2 className="font-bold text-lg mb-4">결제 금액</h2>
+    <div className="sticky top-24 space-y-6">
+      <p className="text-[10px] tracking-[0.3em] uppercase text-gray-400">
+        Order Summary
+      </p>
 
-      <div className="space-y-2 mb-4 text-sm">
-        <div className="flex justify-between text-gray-600">
-          <span>상품 금액</span>
-          <span>{totalPrice.toLocaleString("ko-KR")}원</span>
-        </div>
-        <div className="flex justify-between text-gray-600">
-          <span>배송비</span>
-          <span>{totalPrice >= 50000 ? "무료" : "3,000원"}</span>
-        </div>
+      <div className="flex justify-between items-baseline">
+        <span className="text-[10px] tracking-[0.2em] uppercase text-gray-400">
+          Subtotal
+        </span>
+        <span className="text-xs text-gray-900 tabular-nums">
+          {totalPrice.toLocaleString("ko-KR")}원
+        </span>
       </div>
 
-      <div className="border-t border-gray-200 pt-4 mb-6">
-        <div className="flex justify-between font-bold text-lg">
-          <span>총 결제금액</span>
-          <span>
-            {(totalPrice >= 50000
-              ? totalPrice
-              : totalPrice + 3000
-            ).toLocaleString("ko-KR")}
-            원
-          </span>
-        </div>
-        {totalPrice < 50000 && (
-          <p className="text-xs text-gray-400 mt-1">
-            {(50000 - totalPrice).toLocaleString("ko-KR")}원 더 담으면 무료 배송
-          </p>
-        )}
+      <div className="border-t border-gray-100 pt-5 flex justify-between items-baseline">
+        <span className="text-[10px] tracking-[0.3em] uppercase text-gray-400">
+          Total
+        </span>
+        <span className="text-base font-medium text-gray-900 tabular-nums">
+          {totalPrice.toLocaleString("ko-KR")}원
+        </span>
       </div>
 
-      <Link
-        href="/checkout"
-        className="block w-full text-center py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition-colors font-medium"
+      <button
+        onClick={handleCheckout}
+        className="w-full py-4 bg-gray-900 text-white text-[11px] tracking-[0.3em] uppercase hover:bg-gray-700 transition-colors"
       >
-        주문하기
-      </Link>
+        Checkout
+      </button>
+
+      {!session && (
+        <p className="text-[10px] text-center text-gray-400">
+          로그인 후 주문할 수 있습니다
+        </p>
+      )}
     </div>
   );
 }

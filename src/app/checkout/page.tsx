@@ -5,9 +5,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useCartStore } from "@/store/cartStore";
 import { orderSchema, OrderFormData } from "@/schemas/order.schema";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
+import Image from "next/image";
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -21,17 +20,13 @@ export default function CheckoutPage() {
     resolver: zodResolver(orderSchema),
   });
 
-  // 장바구니가 비어 있으면 상품 목록으로 리다이렉트 (useEffect 사용 필수)
   useEffect(() => {
     if (items.length === 0) {
       router.push("/products");
     }
-  }, [items.length, router]); // items.length 변경 시마다
+  }, [items.length, router]);
 
-  // 장바구니가 비어 있으면 상품 목록으로 리다이렉트
-  if (items.length === 0) {
-    return null;
-  }
+  if (items.length === 0) return null;
 
   const onSubmit = async (data: OrderFormData) => {
     try {
@@ -54,7 +49,6 @@ export default function CheckoutPage() {
         return;
       }
 
-      // 주문 성공 → 장바구니 비우기 → 완료 페이지 이동
       clearCart();
       router.push("/order-complete");
     } catch {
@@ -63,86 +57,120 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto">
-      <h1 className="text-2xl font-bold mb-8">주문하기</h1>
+    <div className="max-w-5xl mx-auto">
+      <h1 className="text-[11px] tracking-[0.4em] uppercase text-gray-400 mb-14">
+        Checkout
+      </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* 주문 폼 */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+        {/* 왼쪽 — 주문 상품 요약 */}
         <div>
-          <h2 className="font-semibold text-lg mb-4">배송지 정보</h2>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          <p className="text-[10px] tracking-[0.3em] uppercase text-gray-400 mb-8">
+            Order Summary
+          </p>
+
+          <div className="space-y-6">
+            {items.map((item) => (
+              <div key={item.id} className="flex gap-4">
+                <div className="relative w-16 flex-shrink-0 bg-gray-50 overflow-hidden" style={{ aspectRatio: "3/4" }}>
+                  {item.imageUrl ? (
+                    <Image
+                      src={item.imageUrl}
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                      sizes="64px"
+                    />
+                  ) : (
+                    <div className="flex items-center justify-center h-full text-gray-300 text-[9px]">
+                      —
+                    </div>
+                  )}
+                </div>
+                <div className="flex flex-1 justify-between items-start pt-1">
+                  <div>
+                    <p className="text-xs text-gray-900 leading-snug">{item.name}</p>
+                    <p className="text-[10px] text-gray-400 mt-1">Qty {item.quantity}</p>
+                  </div>
+                  <p className="text-xs text-gray-900 tabular-nums">
+                    {(item.price * item.quantity).toLocaleString("ko-KR")}원
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="border-t border-gray-100 mt-8 pt-6 flex justify-between items-baseline">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-gray-400">Total</p>
+            <p className="text-base font-medium text-gray-900 tabular-nums">
+              {totalPrice().toLocaleString("ko-KR")}원
+            </p>
+          </div>
+        </div>
+
+        {/* 오른쪽 — 배송지 폼 */}
+        <div>
+          <p className="text-[10px] tracking-[0.3em] uppercase text-gray-400 mb-8">
+            Delivery Information
+          </p>
+
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
             <div>
-              <label className="text-sm font-medium text-gray-700 block mb-1">
-                받는 분 이름
+              <label className="block text-[10px] tracking-[0.25em] uppercase text-gray-400 mb-2">
+                Name
               </label>
-              <Input {...register("receiverName")} placeholder="홍길동" />
+              <input
+                {...register("receiverName")}
+                placeholder="홍길동"
+                className="w-full border-b border-gray-200 pb-2 text-sm text-gray-900 placeholder:text-gray-300 outline-none focus:border-gray-900 transition-colors bg-transparent"
+              />
               {errors.receiverName && (
-                <p className="text-red-500 text-xs mt-1">
+                <p className="text-red-400 text-[10px] mt-1">
                   {errors.receiverName.message}
                 </p>
               )}
             </div>
 
             <div>
-              <label className="text-sm font-medium text-gray-700 block mb-1">
-                전화번호
+              <label className="block text-[10px] tracking-[0.25em] uppercase text-gray-400 mb-2">
+                Phone
               </label>
-              <Input
+              <input
                 {...register("receiverPhone")}
                 placeholder="010-1234-5678"
+                className="w-full border-b border-gray-200 pb-2 text-sm text-gray-900 placeholder:text-gray-300 outline-none focus:border-gray-900 transition-colors bg-transparent"
               />
               {errors.receiverPhone && (
-                <p className="text-red-500 text-xs mt-1">
+                <p className="text-red-400 text-[10px] mt-1">
                   {errors.receiverPhone.message}
                 </p>
               )}
             </div>
 
             <div>
-              <label className="text-sm font-medium text-gray-700 block mb-1">
-                배송 주소
+              <label className="block text-[10px] tracking-[0.25em] uppercase text-gray-400 mb-2">
+                Address
               </label>
-              <Input
+              <input
                 {...register("address")}
                 placeholder="서울시 강남구 테헤란로 123"
+                className="w-full border-b border-gray-200 pb-2 text-sm text-gray-900 placeholder:text-gray-300 outline-none focus:border-gray-900 transition-colors bg-transparent"
               />
               {errors.address && (
-                <p className="text-red-500 text-xs mt-1">
+                <p className="text-red-400 text-[10px] mt-1">
                   {errors.address.message}
                 </p>
               )}
             </div>
 
-            <Button
+            <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full mt-2"
+              className="w-full py-4 bg-gray-900 text-white text-[11px] tracking-[0.3em] uppercase hover:bg-gray-700 transition-colors disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed mt-2"
             >
-              {isSubmitting ? "처리 중..." : "결제하기"}
-            </Button>
+              {isSubmitting ? "Processing..." : "Place Order"}
+            </button>
           </form>
-        </div>
-
-        {/* 주문 요약 */}
-        <div>
-          <h2 className="font-semibold text-lg mb-4">주문 상품</h2>
-          <div className="bg-gray-50 rounded-xl p-4 space-y-3">
-            {items.map((item) => (
-              <div key={item.id} className="flex justify-between text-sm">
-                <span className="text-gray-700">
-                  {item.name} × {item.quantity}
-                </span>
-                <span className="font-medium">
-                  {(item.price * item.quantity).toLocaleString("ko-KR")}원
-                </span>
-              </div>
-            ))}
-
-            <div className="border-t border-gray-200 pt-3 flex justify-between font-bold">
-              <span>총 결제금액</span>
-              <span>{totalPrice().toLocaleString("ko-KR")}원</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ export interface CartItem {
 
 interface CartStore {
   items: CartItem[];
-  addItem: (product: Omit<CartItem, "quantity">) => void;
+  addItem: (product: Omit<CartItem, "quantity">, quantity?: number) => void;
   removeItem: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
   clearCart: () => void;
@@ -29,19 +29,19 @@ export const useCartStore = create<CartStore>()(
         items: [],
 
         // 상품 추가 — 이미 담긴 상품이면 수량만 증가
-        addItem: (product) => {
+        addItem: (product, quantity = 1) => {
           set((state) => {
             const existing = state.items.find((item) => item.id === product.id);
             if (existing) {
               return {
                 items: state.items.map((item) =>
                   item.id === product.id
-                    ? { ...item, quantity: item.quantity + 1 }
+                    ? { ...item, quantity: item.quantity + quantity }
                     : item,
                 ),
               };
             }
-            return { items: [...state.items, { ...product, quantity: 1 }] };
+            return { items: [...state.items, { ...product, quantity }] };
           });
         },
 

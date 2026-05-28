@@ -68,15 +68,10 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
             </span>
           </div>
 
-          {/* 배송비 정보 */}
-          <span className="text-xs text-gray-500 mt-1">
-            {isFreeShipping ? "무료배송" : "배송비 3,000원"}
-          </span>
-
-          {/* 추가 배지 (스마일배송 등) */}
+          {/* 빠른배송 배지 */}
           {isFreeShipping && (
             <div className="mt-1 flex items-center gap-1">
-              <span className="text-[10px] bg-blue-600 text-white px-1.5 py-0.5 rounded font-bold">
+              <span className="text-[10px] bg-gray-900 text-white px-1.5 py-0.5 rounded font-bold">
                 빠른배송
               </span>
               <span className="text-[11px] text-gray-600 font-medium">
