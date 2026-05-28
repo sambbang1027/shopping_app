@@ -1,51 +1,55 @@
 import Link from "next/link";
+import Image from "next/image";
 import { auth } from "@/lib/auth";
 import { SignOutButton } from "./SignOutButton";
-import { CartBadge } from "./CartBadge"; // ← 이 줄을 추가합니다
+import { CartBadge } from "./CartBadge";
 
 export async function Header() {
   const session = await auth();
 
   return (
-    <header className="border-b bg-white sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* 로고 */}
-        <Link href="/" className="text-xl font-bold text-gray-900">
-          🛍️ ShopApp
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/Clot.png"
+            alt="Clot Studio"
+            width={60}
+            height={30}
+            className="h-5 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* 네비게이션 */}
-        <nav className="flex items-center gap-6">
+        <nav className="flex items-center gap-8">
           <Link
             href="/products"
-            className="text-sm text-gray-600 hover:text-gray-900"
+            className="text-xs tracking-widest uppercase text-gray-500 hover:text-gray-900 transition-colors"
           >
-            상품 목록
+            Products
           </Link>
-          <CartBadge userId={session?.user?.id} />{" "}
-          {/* 장바구니 배지를 여기에 추가합니다 */}
+          <CartBadge userId={session?.user?.id} />
           {session?.user?.role === "admin" && (
             <Link
               href="/admin"
-              className="text-sm text-blue-600 hover:text-blue-800 font-medium"
+              className="text-xs tracking-widest uppercase text-gray-500 hover:text-gray-900 transition-colors"
             >
-              관리자
+              Admin
             </Link>
           )}
         </nav>
 
         {/* 인증 영역 */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           {session ? (
             <>
-              <span className="text-sm text-gray-600">
-                {session.user?.name} 님
-              </span>
               <Link
                 href="/mypage"
-                className="text-sm text-gray-600 hover:text-gray-900"
+                className="text-xs tracking-widest uppercase text-gray-500 hover:text-gray-900 transition-colors"
               >
-                마이페이지
+                {session.user?.name}
               </Link>
               <SignOutButton />
             </>
@@ -53,15 +57,15 @@ export async function Header() {
             <>
               <Link
                 href="/login"
-                className="text-sm text-gray-600 hover:text-gray-900"
+                className="text-xs tracking-widest uppercase text-gray-500 hover:text-gray-900 transition-colors"
               >
-                로그인
+                Login
               </Link>
               <Link
                 href="/register"
-                className="text-sm bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-700"
+                className="text-xs tracking-widest uppercase border border-gray-900 text-gray-900 px-4 py-2 hover:bg-gray-900 hover:text-white transition-colors"
               >
-                회원가입
+                Sign Up
               </Link>
             </>
           )}
